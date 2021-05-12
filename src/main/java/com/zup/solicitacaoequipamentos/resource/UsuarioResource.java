@@ -2,6 +2,8 @@ package com.zup.solicitacaoequipamentos.resource;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zup.solicitacaoequipamentos.entity.Usuario;
+import com.zup.solicitacaoequipamentos.entity.dto.UsuarioRequestDto;
 import com.zup.solicitacaoequipamentos.service.UsuarioService;
 
 @RestController
@@ -21,8 +24,7 @@ public class UsuarioResource {
 	private UsuarioService usuarioService;
 	
 	@PostMapping
-	public ResponseEntity<Usuario>cadastrarUsuario(@RequestBody Usuario usu){
-		
+	public ResponseEntity<Usuario>cadastrarUsuario(@RequestBody @Valid UsuarioRequestDto usu){
 		return ResponseEntity.ok().body(usuarioService.salvar(usu));
 	}
 	
