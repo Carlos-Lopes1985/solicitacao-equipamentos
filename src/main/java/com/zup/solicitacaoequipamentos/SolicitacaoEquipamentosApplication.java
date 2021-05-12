@@ -43,8 +43,8 @@ public class SolicitacaoEquipamentosApplication extends SpringBootServletInitial
 
 	@Override
 	public void run(String... args) throws Exception {
-		Usuario usu = new Usuario(null, "Carlos", "123", "carlos@hotmail.com", Role.USUARIO);
-		Usuario usu1= new Usuario(null, "Pedro", "123", "pedro@hotmail.com", Role.USUARIO);
+		Usuario usu = new Usuario(null, "Carlos", "123", "carloshotmail.com", Role.USUARIO);
+		Usuario usu1= new Usuario(null, "Pedro", "123", "pedro@.com", Role.USUARIO);
 		
 		usuarioRepository.saveAll(Arrays.asList(usu,usu1));
 		
