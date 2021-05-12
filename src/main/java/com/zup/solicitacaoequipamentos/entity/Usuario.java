@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zup.solicitacaoequipamentos.enums.Role;
 
 @Entity
@@ -40,9 +41,11 @@ public class Usuario implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "usuario")
 	private List<Pedido>pedidos = new ArrayList<Pedido>();
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "usuario")
 	private List<AndamentoPedido> status = new ArrayList<AndamentoPedido>();
 	
