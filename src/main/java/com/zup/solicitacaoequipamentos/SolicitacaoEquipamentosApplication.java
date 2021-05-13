@@ -48,7 +48,7 @@ public class SolicitacaoEquipamentosApplication extends SpringBootServletInitial
 		
 		usuarioRepository.saveAll(Arrays.asList(usu,usu1));
 		
-		Pedido pedido = new Pedido(null, "Mouse", "Solicito um mouse", LocalDate.now(),StatusPedido.ABERTO, usu);
+		Pedido pedido  = new Pedido(null, "Mouse", "Solicito um mouse", LocalDate.now(),StatusPedido.ABERTO, usu);
 		Pedido pedido2 = new Pedido(null, "Mouse", "Solicito um mouse", LocalDate.now(),StatusPedido.FECHADO, usu1);
 		
 		pedidoRepository.saveAll(Arrays.asList(pedido,pedido2));
