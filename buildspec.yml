@@ -9,11 +9,6 @@ phases:
   post_build:
     commands:
       - echo Build completed successfully
-artifacts:
-  files:
-    - target/solicitacao_equipame/SourceArti/*/*
-  discard-paths: yes
-
 cache:
   paths:
     - '/root/.m2/**/*'
