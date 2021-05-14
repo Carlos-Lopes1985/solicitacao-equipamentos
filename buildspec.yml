@@ -10,8 +10,9 @@ phases:
     commands:
       - echo Build completed successfully
 artifacts:
-   files:
-    - '**/*'
+  files:
+    - target/solicitacaoequipamen/BuildArtif/*/*
+  discard-paths: yes
 
 cache:
   paths:
