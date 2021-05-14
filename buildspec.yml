@@ -11,7 +11,7 @@ phases:
       - echo Build completed successfully
 artifacts:
   files:
-    - solicitacaoequipamen/SourceArti/*/*
+    - solicitacaoequipamen/SourceArti/
   discard-paths: yes
 
 cache:
