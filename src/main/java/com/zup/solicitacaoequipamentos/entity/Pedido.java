@@ -48,6 +48,17 @@ public class Pedido implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
 	private List<AndamentoPedido>andamentoPedidos = new ArrayList<AndamentoPedido>();
+	
+	public Pedido(Long id, String descricao, String assunto, LocalDate data, StatusPedido statusPedido,
+			Usuario usuario) {
+		super();
+		this.id = id;
+		this.descricao = descricao;
+		this.assunto = assunto;
+		this.data = data;
+		this.statusPedido = statusPedido;
+		this.usuario = usuario;
+	}
 
 	public Pedido(Long id, String descricao, String assunto, LocalDate data) {
 		super();
