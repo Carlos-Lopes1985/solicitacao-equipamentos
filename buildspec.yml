@@ -9,10 +9,10 @@ phases:
   post_build:
     commands:
       - echo Build completed successfully
-      - mv target/solicitacao_equipamento.war ROOT.war
+      - mv target/solicitacao_equipamento.war
 artifacts:
   files:
-    -ROOT.war
+    - target/solicitacao_equipamento.war
   discard-paths: yes
 
 cache:
