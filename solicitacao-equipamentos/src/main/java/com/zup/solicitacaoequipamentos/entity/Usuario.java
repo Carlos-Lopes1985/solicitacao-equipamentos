@@ -49,6 +49,10 @@ public class Usuario implements Serializable {
 	@OneToMany(mappedBy = "usuario")
 	private List<AndamentoPedido> status = new ArrayList<AndamentoPedido>();
 	
+	@JsonIgnore
+	@OneToMany(mappedBy = "usuario")
+	private List<Equipamento>equipamentos = new ArrayList<Equipamento>();
+	
 	public Usuario(String nome, String senha, String email,Role role) {
 		super();
 		this.nome = nome;
