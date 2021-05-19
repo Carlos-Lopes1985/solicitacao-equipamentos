@@ -10,10 +10,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.pessoas.entity.Desenvolvedor;
 import com.pessoas.entity.Equipe;
+import com.pessoas.entity.Funcionario;
 import com.pessoas.entity.Gestor;
 import com.pessoas.entity.Pessoa;
+import com.pessoas.entity.Salario;
 import com.pessoas.repository.EquipeRepository;
 import com.pessoas.repository.PessoaRepository;
+import com.pessoas.repository.SalarioRepository;
 
 @SpringBootApplication
 public class CadastroPessoasApiApplication implements CommandLineRunner {
@@ -23,6 +26,9 @@ public class CadastroPessoasApiApplication implements CommandLineRunner {
 	
 	@Autowired
 	private EquipeRepository equipeRepository;
+	
+	@Autowired
+	private SalarioRepository salarioRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CadastroPessoasApiApplication.class, args);
@@ -73,6 +79,15 @@ public class CadastroPessoasApiApplication implements CommandLineRunner {
 			    desenvolvedor11,desenvolvedor10,
 			    desenvolvedor12,desenvolvedor14,
 			    desenvolvedor13,desenvolvedor15,gestor16,gestor17,gestor18,gestor19));	
+		
+		Salario sal = new Salario(null, 6590., LocalDate.now(), "Pleno");
+		Salario sal1 = new Salario(null, 6590., LocalDate.now(), "Pleno");
+		Salario sal2 = new Salario(null, 6590., LocalDate.now(), "Pleno");
+		Salario sal3 = new Salario(null, 6590., LocalDate.now(), "Pleno");
+		
+		sal.setPessoa(desenvolvedor12);
+		
+		salarioRepository.saveAll(Arrays.asList(sal,sal1,sal2,sal3));
 	}
 
 }

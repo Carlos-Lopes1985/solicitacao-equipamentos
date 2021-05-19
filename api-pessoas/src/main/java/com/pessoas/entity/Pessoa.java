@@ -16,7 +16,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.pessoas.enums.Perfil;
 
@@ -40,9 +42,13 @@ public abstract class Pessoa implements Serializable{
 	@Column(unique=true)
 	private String    email;
 	
-	@ElementCollection(fetch = FetchType.EAGER)
-	@CollectionTable(name="TELEFONES")
-	private Set<String> telefones = new HashSet<>();
+	@JsonIgnore
+	@OneToOne(mappedBy = "pessoa")
+	private Salario salarios;
+	
+//	@ElementCollection(fetch = FetchType.EAGER)
+//	@CollectionTable(name="TELEFONES")
+//	private Set<String> telefones = new HashSet<>();
 	
 	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name="PERFIS")
@@ -117,13 +123,13 @@ public abstract class Pessoa implements Serializable{
 		this.email = email;
 	}
 
-	public Set<String> getTelefones() {
-		return telefones;
-	}
-
-	public void setTelefones(Set<String> telefones) {
-		this.telefones = telefones;
-	}
+//	public Set<String> getTelefones() {
+//		return telefones;
+//	}
+//
+//	public void setTelefones(Set<String> telefones) {
+//		this.telefones = telefones;
+//	}
 	
 	//responsável por retornar todos os perfils do usuário
 	public Set<Perfil> getPerfils(){
@@ -133,5 +139,29 @@ public abstract class Pessoa implements Serializable{
 	
 	public void addPerfil(Perfil perfil) {
 		perfis.add(perfil.getCod());
+	}
+
+	public Integer getIdPessoa() {
+		return idPessoa;
+	}
+
+	public void setIdPessoa(Integer idPessoa) {
+		this.idPessoa = idPessoa;
+	}
+
+	public Salario getSalarios() {
+		return salarios;
+	}
+
+	public void setSalarios(Salario salarios) {
+		this.salarios = salarios;
+	}
+
+	public Set<Integer> getPerfis() {
+		return perfis;
+	}
+
+	public void setPerfis(Set<Integer> perfis) {
+		this.perfis = perfis;
 	}
 }

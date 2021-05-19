@@ -7,22 +7,22 @@ import org.springframework.stereotype.Service;
 import com.pessoas.entity.Desenvolvedor;
 
 @Service
-public class ClienteServiceImpl implements ClienteService {
+public class DesenvolvedorServiceImpl implements DesenvolvedorService {
 
 	@Override
-	public void cadatrarCliente(Desenvolvedor cliente) {
+	public void cadastrarDesenvolvedor(Desenvolvedor cliente) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Desenvolvedor listarClienteId(Integer id) {
+	public Desenvolvedor listarDesenvolvedorId(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Desenvolvedor> listarTodosClientes() {
+	public List<Desenvolvedor> listarTodosDesenvolvedor() {
 		// TODO Auto-generated method stub
 		return null;
 	}
