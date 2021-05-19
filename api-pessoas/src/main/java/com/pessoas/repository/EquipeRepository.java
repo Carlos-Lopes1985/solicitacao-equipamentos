@@ -3,9 +3,9 @@ package com.pessoas.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.pessoas.entity.Desenvolvedor;
+import com.pessoas.entity.Equipe;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Desenvolvedor, Integer> {
+public interface EquipeRepository extends JpaRepository<Equipe, Long> {
 
 }

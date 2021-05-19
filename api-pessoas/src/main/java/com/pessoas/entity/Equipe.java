@@ -35,6 +35,35 @@ public class Equipe implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "equipe")
 	private List<Desenvolvedor> devs = new ArrayList<Desenvolvedor>();
+	
+	
+	public Equipe(Long id, String nomeEquipe) {
+		super();
+		this.id = id;
+		this.nomeEquipe = nomeEquipe;
+	}
+
+	public Equipe(Long id, String nomeEquipe, List<Desenvolvedor> devs) {
+		super();
+		this.id = id;
+		this.nomeEquipe = nomeEquipe;
+		this.devs = devs;
+	}
+
+	public Equipe(Long id, String nomeEquipe, Gestor gestor) {
+		super();
+		this.id = id;
+		this.nomeEquipe = nomeEquipe;
+		this.gestor = gestor;
+	}
+
+	public Equipe(Long id, String nomeEquipe, Gestor gestor, List<Desenvolvedor> devs) {
+		super();
+		this.id = id;
+		this.nomeEquipe = nomeEquipe;
+		this.gestor = gestor;
+		this.devs = devs;
+	}
 
 	public Equipe() {
 		super();
@@ -68,8 +97,8 @@ public class Equipe implements Serializable {
 		return gestor;
 	}
 
-	public void setGestor(Gestor gestor) {
-		this.gestor = gestor;
+	public void setGestor(Pessoa gestor) {
+		this.gestor = (Gestor) gestor;
 	}
 	
 }

@@ -10,7 +10,7 @@ import com.pessoas.enums.Perfil;
 
 @Entity
 @JsonTypeName("funcionario")
-public class Funcionario extends Pessoa implements Serializable{
+public abstract class Funcionario extends Pessoa implements Serializable{
 
 	/**
 	 * 
@@ -19,8 +19,6 @@ public class Funcionario extends Pessoa implements Serializable{
 	
 	private String matricula;
 	private LocalDate dataEntrada;
-	
-	
 	
 	public Funcionario(Integer idUsuario, String nome, LocalDate dataNascimento, String cpf, String senha, String email,
 			String matricula, LocalDate dataEntrada) {

@@ -27,6 +27,14 @@ public class Desenvolvedor extends Funcionario implements Serializable{
 		super(idUsuario, nome, dataNascimento, cpf, senha, email, matricula, dataEntrada);
 		addPerfil(Perfil.CLIENTE);
 	}
+	
+	public Desenvolvedor(Integer idUsuario, String nome, LocalDate dataNascimento, String cpf, String senha,
+			String email, String matricula, LocalDate dataEntrada, Equipe equipe) {
+		super(idUsuario, nome, dataNascimento, cpf, senha, email, matricula, dataEntrada);
+		this.equipe = equipe;
+	}
+
+
 
 	public Desenvolvedor() {
 		super();

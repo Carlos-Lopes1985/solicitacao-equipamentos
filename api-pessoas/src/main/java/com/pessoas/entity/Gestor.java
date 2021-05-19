@@ -17,15 +17,19 @@ public class Gestor extends Funcionario{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@OneToOne(mappedBy = "gestor")
+	private Equipe equipe;
 	
+	public Gestor(Integer idUsuario, String nome, LocalDate dataNascimento, String cpf, String senha, String email,
+			String matricula, LocalDate dataEntrada) {
+		super(idUsuario, nome, dataNascimento, cpf, senha, email, matricula, dataEntrada);
+	}
+
 	public Gestor(Integer idUsuario, String nome, LocalDate dataNascimento, String cpf, String senha, String email,
 			String matricula, LocalDate dataEntrada, Equipe equipe) {
 		super(idUsuario, nome, dataNascimento, cpf, senha, email, matricula, dataEntrada);
 		this.equipe = equipe;
 	}
-
-	@OneToOne(mappedBy = "gestor")
-	private Equipe equipe;
 
 	public Gestor() {
 		super();
